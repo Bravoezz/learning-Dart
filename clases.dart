@@ -1,7 +1,11 @@
 class Hero {
   String? name;
   String? power;
-  bool? isAlive;
+  bool? _isAlive; //! are un set o llamado seter para cambiar este valod
+
+  void set alive(bool iss) {
+    this._isAlive = iss;
+  }
 
   //** constructor comun y corriente
   /* Hero(String paramName, String paramPower) {
@@ -33,7 +37,7 @@ class Hero {
   @override
   String toString() {
     // TODO: implement toString
-    return ' Heroe: $name \n Poder: $power \n Estado: ${isAlive ?? 'Muerto :('}';
+    return ' Heroe: $name \n Poder: $power \n Estado: ${(_isAlive ?? false) ? 'Vivo :)' : 'Muerto :('}';
   }
 }
 
@@ -47,12 +51,16 @@ void main() {
   // final Hero deadPool = new Hero('Dave', 'Regeneracion'); //! otra forma de declarar variables con final
 
   Hero flash = new Hero.Nombre(pName: 'Flash', pPower: 'Velocidad');
+  flash.alive = true;
 
   final saitama = new Hero.FormaCorta('Saitama', 'Dios');
+  saitama.alive = true;
 
   final genos = new Hero.ParamConNombre(name: 'Genos', power: 'Fuego-Cibord');
+  genos.alive = true;
 
-  Hero ciclistaSinLicencia = new Hero.FormJson(json: ciclistaSinLicenciaProvider);
+  Hero ciclistaSinLicencia =
+      new Hero.FormJson(json: ciclistaSinLicenciaProvider);
 
   print("""
 $deadPool 
