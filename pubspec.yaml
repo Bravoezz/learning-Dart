@@ -1,0 +1,15 @@
+name: learning
+description: todo sobre dart
+version: 1.0.0
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  http: ^0.13.3
+
+# dev_dependencies:
+#   # Tus dependencias de desarrollo aquí
+
+# flutter:
+#   # Configuración específica de Flutter aquí (si estás utilizando Flutter)
